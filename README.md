@@ -1,2 +1,2 @@
 # nsm-build
-Scripts to build nsm packages with fpm
+All kinds of scripts that build NSM packages
