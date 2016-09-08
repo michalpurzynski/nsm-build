@@ -6,13 +6,8 @@ rm -rf "${SRC_ROOT}"/"${PKGNAME}" 2>&1 > /dev/null
 rm -rf "${TMP_ROOT}" 2>&1 > /dev/null
 mkdir -p "${TMP_ROOT}" 2>&1 > /dev/null
 
-#git clone https://github.com/actor-framework/actor-framework.git
-#cd actor-framework
-#./configure --prefix=/opt/libcaf
-#make
-
 cd "${BUILD_PATH}" && git clone --recursive git://git.bro.org/bro "${SRC_ROOT}"/"${PKGNAME}"
-cd "${SRC_ROOT}"/"${PKGNAME}" && git checkout remotes/origin/topic/seth/multi-merge && ./configure --prefix=/opt/bro --with-pcap=/opt/snf --with-libcaf=/opt/libcaf || exit 1
+cd "${SRC_ROOT}"/"${PKGNAME}" && ./configure --prefix=/opt/bro --with-pcap=/opt/snf --with-libcaf=/opt/libcaf || exit 1
 make install DESTDIR="${TMP_ROOT}" || exit 1
 cd "${BUILD_PATH}"
 
