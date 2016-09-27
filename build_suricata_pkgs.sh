@@ -23,7 +23,7 @@ cmake -DBUILD_STATIC_AND_SHARED=1 -DBOOST_ROOT="${BUILD_PATH}"/tmp/boost_"${BOOS
 rm -rfv "${BUILD_PATH}"/tmp/boost_"${BOOST_VER}" 2>&1 > /dev/null
 
 cd "${BUILD_PATH}"
-fpm -s dir -t deb -a native -v 4.0.1-`date +"%Y%m%d%H%M%S"` -n hyperscan --provides hyperscan --deb-user root --deb-group root -C "${BUILD_PATH}"/"${TMP_ROOT}" opt/hyperscan
+fpm -s dir -t deb -a native -v 4.3.1-`date +"%Y%m%d%H%M%S"` -n hyperscan --provides hyperscan --deb-user root --deb-group root -C "${BUILD_PATH}"/"${TMP_ROOT}" opt/hyperscan
 
 PKGNAME=suricata
 

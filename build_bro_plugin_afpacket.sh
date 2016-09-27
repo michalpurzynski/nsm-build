@@ -7,7 +7,7 @@ rm -rf "${TMP_ROOT}" 2>&1 > /dev/null
 mkdir -p "${TMP_ROOT}"/opt/bro/lib/bro/plugins 2>&1 > /dev/null
 
 cd "${BUILD_PATH}" && git clone --recursive https://github.com/bro/bro-plugins.git "${SRC_ROOT}"/"${PKGNAME}"
-cd "${SRC_ROOT}"/"${PKGNAME}"/af_packet && sed -i -s 's:mkdir\ \-p\ \$installroot::' configure && ./configure --bro-dist=/home/mpurzynski/bro --install-root=/opt/bro/lib/bro/plugins --with-kernel=/usr/src/kernels/`uname -r` || exit 1
+cd "${SRC_ROOT}"/"${PKGNAME}"/af_packet && sed -i -s 's:mkdir\ \-p\ \$installroot::' configure && ./configure --bro-dist=/home/mpurzynski/src/bro --install-root=/opt/bro/lib/bro/plugins --with-kernel=/usr/src/kernels/`uname -r` || exit 1
 make || exit 1
 make install DESTDIR="${TMP_ROOT}" || exit 1
 
